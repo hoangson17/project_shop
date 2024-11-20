@@ -10,8 +10,8 @@ const Info = () => {
     <>
         <MainLayout>
             <div className={container}>
-                {dataInfo.map((item)=>{
-                    return <InfoCard content={item.title} des={item.description} src={item.src} />
+                {dataInfo.map((item,key)=>{
+                    return <InfoCard key={key} content={item.title} des={item.description} src={item.src} />
                 })}
             </div>
         </MainLayout>

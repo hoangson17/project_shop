@@ -1,0 +1,10 @@
+@use '@Styles/variables.module.scss' as variables;
+@use '@Styles/mixin.module.scss' as mixins;
+
+.container{
+    @include mixins.flex_box_custom(space-between,center,10px);
+}
+
+.containerItem{
+    @include mixins.flex_box_custom(center,center,10px);
+}
