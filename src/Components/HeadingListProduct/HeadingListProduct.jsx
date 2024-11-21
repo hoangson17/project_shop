@@ -1,21 +1,27 @@
 import MainLayout from '@Components/Layout/Layout'
-import CountdownTimer from '@Components/CountdownTimer/CountdownTimer'
 import style from './style.module.scss'
 import React from 'react'
 import CountdownBanner from '@Components/CountdownBanner/CountdownBanner'
+import ProductItem from '@Components/ProductItem/ProductItem'
 
-const HeadingListProduct = () => {
+const HeadingListProduct = ({data}) => {
   const {container,containerItem} = style;
+  console.log(data);
   return (
     <MainLayout>
-      {/* <CountdownTimer targetDate={targetDate} /> */}
       <div className={container}>
         <CountdownBanner></CountdownBanner>
         <div className={containerItem}>
-          <div>1</div>
-          <div>2</div>
+          {/* cách 1 */}
+          {/* {data.map((item)=>{
+            return <ProductItem key={item._id} src={item.images[0]} preSrc={item.images[1]} name={item.name} price={item.price}/>
+          })} */}
+          {/* cách 2 */}
+          {data.map((item)=>(
+            <ProductItem key={item._id} src={item.images[0]} preSrc={item.images[1]} name={item.name} price={item.price}/>
+          ))}
         </div>
-      </div>
+      </div> 
      
     </MainLayout>
   )
