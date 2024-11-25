@@ -7,6 +7,7 @@ import style from './style.module.scss'
 import HeadingListProduct from "@Components/HeadingListProduct/HeadingListProduct";
 import { getProducts } from "@/apis/productsService";
 import PopularProduct from "@Components/PopularProduct/PopularProduct";
+import SaleHomePage from "@Components/SaleHomePage/SaleHomePage";
 
 const HomePage = () => {
   const [listProduct,setListProduct] = useState([]);
@@ -26,6 +27,8 @@ const HomePage = () => {
         <AdvanceHeadling/>
         <HeadingListProduct data={listProduct.slice(0,2)} />
         <PopularProduct data={listProduct.slice(2,listProduct.length)} />
+        <SaleHomePage/>
+        <div style={{height:`300px`}}></div>
     </>
   );
 };
