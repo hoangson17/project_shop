@@ -6,12 +6,41 @@ import logo from "@Icons/Images/Logo-retina.png";
 import reloadIcon from "@Icons/svgs/reloadIcon.svg"
 import heartIcon from "@Icons/svgs/heartIcon.svg"
 import cartIcon from "@Icons/svgs/cartIcon.svg"
+import useScrollHandling from "@/hooks/useScrollHandling";
+import { useContext, useEffect, useState } from "react";
+import classNames from "classnames";
+import { SideBarContext } from "@/Context/SideBarProvider";
 function MyHeader() {
-  const { containerBoxIcon, containerMenu, containerHeader, containerBox,container } =
+  const { containerBoxIcon, containerMenu, containerHeader, containerBox,container,fixedHeader,topHeader } =
     style;
+
+  const {scrollPosition} = useScrollHandling();
+  const [fixedPosition,setFixedPossition] = useState(false);
+
+  const {isOpen,setIsOpen} = useContext(SideBarContext);
+
+  console.log(isOpen);
+
+  // console.log(scrollPosition);
+
+  useEffect(()=>{
+    // if(scrollPosition > 80 ){
+    //   setFixedPossition(true);
+    // }else{
+    //   setFixedPossition(false);
+    // }
+
+    // setFixedPossition(scrollPosition > 80 ? true:false);
+    
+    setFixedPossition(scrollPosition > 80);
+
+  },[scrollPosition])
+
   return (
     <>
-      <div className={container}>
+      <div className={classNames(container,topHeader,{
+        [fixedHeader]:fixedPosition
+      })}>
       <div className={containerHeader}>
         <div className={containerBox}>
           <div className={containerBoxIcon}>
@@ -31,7 +60,7 @@ function MyHeader() {
         <div className={containerBox}>
           <div className={containerMenu}>
             {dataMenu.slice(3, 6).map((item, key) => {
-              return <Menu key={key} content={item.content} href={item.href} />;
+              return <Menu key={key} content={item.content} href={item.href} setIsOpen={setIsOpen}/>;
             })}
           </div>
           <div className={containerBoxIcon}>

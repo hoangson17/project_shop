@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
 import style from "./style.module.scss"
 import Button from '@Components/Button/Button';
-import useTranslateX from '@Components/SaleHomePage/translateXImages';
+import useTranslateXImages from '@/hooks/useTranslateXImages';
 
 const SaleHomePage = () => {
   const {container,title,desc,boxBtn,boxImg} = style;
 
-  const{translateXPosition} = useTranslateX();
+  const{translateXPosition} = useTranslateXImages();
 
   
 

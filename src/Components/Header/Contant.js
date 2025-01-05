@@ -9,7 +9,7 @@ const dataMenu = [
     {content:'Our Shop',href:'#'},
     {content:'About Us',href:'#'},
     {content:'Contact',href:'#'},
-    {content:'Shearch',href:'#'},
+    {content:'Search',href:'#'},
     {content:'Sign in',href:'#'}
 ]
 

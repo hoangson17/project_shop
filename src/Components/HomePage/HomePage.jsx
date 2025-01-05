@@ -8,6 +8,7 @@ import HeadingListProduct from "@Components/HeadingListProduct/HeadingListProduc
 import { getProducts } from "@/apis/productsService";
 import PopularProduct from "@Components/PopularProduct/PopularProduct";
 import SaleHomePage from "@Components/SaleHomePage/SaleHomePage";
+import MyFooter from "@Components/Footer/Footer";
 
 const HomePage = () => {
   const [listProduct,setListProduct] = useState([]);
@@ -28,7 +29,7 @@ const HomePage = () => {
         <HeadingListProduct data={listProduct.slice(0,2)} />
         <PopularProduct data={listProduct.slice(2,listProduct.length)} />
         <SaleHomePage/>
-        <div style={{height:`300px`}}></div>
+        <MyFooter/>
     </>
   );
 };

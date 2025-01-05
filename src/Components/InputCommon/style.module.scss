@@ -1,0 +1,29 @@
+@use "@Styles/variables.module.scss" as variables;
+
+.container{
+    margin-bottom: 20px;
+    .labelInput{
+        font-size: 14px;
+        color: variables.$four_color;
+        
+    }
+
+    .boxInput{
+        width: 100%;
+        position: relative;
+        margin-bottom: 10px;
+
+        input{
+            width: 100%;
+            border: 1px solid #e1e1e1;
+            outline: none;
+            padding: 10px 0 10px 10px;
+        }
+        .boxIcon{
+            position: absolute;
+            top: 12px;
+            right: 0;
+            cursor: pointer;
+        }
+    }
+}
