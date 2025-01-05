@@ -3,7 +3,7 @@ import React from 'react'
 import style from "./style.module.scss"
 import Button from '@Components/Button/Button';
 const Login = () => {
-    const{container,title,boxRememberMe} =style;
+    const{container,title,boxRememberMe,lostPw} =style;
   return (
     <div className={container}>
         <div className={title}>SIGN IN</div>
