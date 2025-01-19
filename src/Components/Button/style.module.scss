@@ -2,7 +2,7 @@
 @use "@Styles/variables.module.scss" as variables;
 
 .btn{
-    @include mixins.btn(176px, 42px,variables.$primary_color, 3px); 
+    @include mixins.btn(100%, 42px,variables.$primary_color, 3px); 
     font-size: 14px;
     font-weight: 300;
     // padding: 13px 45px;

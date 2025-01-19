@@ -19,7 +19,7 @@ function MyHeader() {
 
   const {isOpen,setIsOpen} = useContext(SideBarContext);
 
-  console.log(isOpen);
+  // console.log(isOpen);
 
   // console.log(scrollPosition);
 
